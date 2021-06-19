@@ -68,4 +68,41 @@
 
 ### Work with directories
 
+`/` - root directory - коренная директория Linux
+
+`/home` - directory where users
+
+`/media` - diks directory
+
+`pwd` – вывести путь где мы сейчас - path to current place where we are
+
+`~ `  - сокращение нашей Home директории - short name home dirrectory when you are in `/home/username`
+
+`..`    - директория которая выше - directory which above current
+
+`. `    - директория где мы сейчас - current directory
+
+`cd`  - сменить директорию - change directory
+
+`cd` or `cd ~` - move to home directory `/home/username`
+
+`cd ~/test/` - move to `/home/username/test/`
+
+`cd /` - move to root directory "/" we can `cd /home`
+
+`cd ..` - move to directory above
+
+`cd ../..` - move to 2 directory above
+
+`ls` – вывести содержимое директории - show all in directory
+
+`ls -l` - more info about directory(with rights)
+
+`ls -la` - show all in directory include hidden
+
+`ls –la –R  / `   - показать все на компутере - show all files in pc
+
+
+### Work with files
+
 
