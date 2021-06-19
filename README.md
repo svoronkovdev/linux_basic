@@ -102,6 +102,38 @@
 
 `ls –la –R  / `   - показать все на компутере - show all files in pc
 
+`mkdir` – создать директорию -create directory
+
+`mkdir dir1` -create directory dir1
+
+`mkdir dir1/dir2` - create dir2 in dir1
+
+`mkdir -p dir3/dir4` - create dir3 and dir4 in dir3
+
+`ls -R dir3` -show name dir3: and dir4
+
+`ls -Rla dir3` -show name dir3: and dir4 with hidden
+
+`mv`  - переименовать или перенести директорию
+
+`mv dir1 dirr` - rename dir1 to dirr
+
+`rmdir` – стереть пустую директорию
+
+`rmdir dirr` - remove if dirr empty
+
+`rm –R`   – стереть не пустую директорию со всем что внутри - delete not empty directory
+
+`rm -R  dir*` - remove all directories started "dir"
+
+`cp`     - копировать директорию - copy directory
+
+`cp -R dir2 dir4` - copy directory dir2 to dir4 with all files
+
+
+`DONT DO IT DANGER!!!`  `sudo rm –R  / --no-preserve-root`   - замочить систему Linux - kill system
+
+
 
 ### Work with files
 
@@ -139,38 +171,29 @@
 
 `mv .secret.txt ~/Desktop/` - move secret.txt to desktop directory
 
-### Work with directories
-
-`mkdir` – создать директорию -create directory
-
-`mkdir dir1` -create directory dir1
-
-`mkdir dir1/dir2` - create dir2 in dir1
-
-`mkdir -p dir3/dir4` - create dir3 and dir4 in dir3
-
-`ls -R dir3` -show name dir3: and dir4
-
-`ls -Rla dir3` -show name dir3: and dir4 with hidden
-
-`mv`  - переименовать или перенести директорию
-
-`mv dir1 dirr` - rename dir1 to dirr
-
-`rmdir` – стереть пустую директорию
-
-`rmdir dirr` - remove if dirr empty
-
-`rm –R`   – стереть не пустую директорию со всем что внутри - delete not empty directory
-
-`rm -R  dir*` - remove all directories started "dir"
-
-`cp`     - копировать директорию - copy directory
-
-`cp -R dir2 dir4` - copy directory dir2 to dir4 with all files
-
-
-`DONT DO IT DANGER!!!`  `sudo rm –R  / --no-preserve-root`   - замочить систему Linux - kill system
 
 
 ### Create Links
+
+`ln`   - создать дубликат файла 
+
+`ln –s `  - создать symbolic линк на файл или директорию типа Shortcut
+
+`ln -s /home/user/dir MyLinkToDir` - create link to directory dir (always use absolute path) with name link MyLinkToDir
+
+`cd MyLinkToDir` - go to dir by link
+
+`mv MyLinkToDir ~/Desktop/` - move link to desktop directory
+
+`ln -s file.txt MyFile` - link to file file.txt (we can create a few links to one file, if we remove file links will be read)
+
+`toch MyFile` - change data creating file.txt
+
+`rm MyFile` - remove link
+
+`ln file.txt fileduplicate` - !!!only for file!!! create duplicate(clone) file.txt with name fileduplicate (if we change file.txt duplicate also change in back order too)
+
+
+### Commands 
+
+
