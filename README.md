@@ -105,4 +105,72 @@
 
 ### Work with files
 
+`cat` - show file
 
+`cat text.txt` - show file use `Tab` when in directory to autofilling for example `cat t`+Tab == `cat text.txt`
+
+`more text.txt` - show file by pages, to read next use `Enter` to exit `q`.
+
+`less text.txt` - show file  When we in text redactor we can find word `/word` - show all "word" in this manual(to move between "word" use `n`). To exit `q`
+
+`touch` – создать файл или обновить время
+
+`toch test.txt` -create file test.txt if you again use `touch test.txt` will be updated date creation
+
+`cp`  - скопировать файл - copy file
+
+`cp test.txt /home/user/data/` - cp fileName then directory where we want to copy(copy test.txt to /home/user/data/)
+
+`cp t*.* dir` - copy all files started "t" to directory dir
+
+`cp file?.txt -v dir` - file?.txt it mean that any symbol can be instead ? , copy all files according pattern to dir; `-v` mean show what we do 
+
+`cp -R dir newdir` - copy directory dir into directory newdir
+
+`rm` – стереть файл - delete file
+
+`rm *` -delete all files in directory
+
+`rm dir/*` - delete all files in dir
+
+`mv` – перенести файл или переименовать - move or rename file
+
+`mv secret.txt .secret.txt` - make file hidden to show it use `ls -la`
+
+`mv .secret.txt ~/Desktop/` - move secret.txt to desktop directory
+
+### Work with directories
+
+`mkdir` – создать директорию -create directory
+
+`mkdir dir1` -create directory dir1
+
+`mkdir dir1/dir2` - create dir2 in dir1
+
+`mkdir -p dir3/dir4` - create dir3 and dir4 in dir3
+
+`ls -R dir3` -show name dir3: and dir4
+
+`ls -Rla dir3` -show name dir3: and dir4 with hidden
+
+`mv`  - переименовать или перенести директорию
+
+`mv dir1 dirr` - rename dir1 to dirr
+
+`rmdir` – стереть пустую директорию
+
+`rmdir dirr` - remove if dirr empty
+
+`rm –R`   – стереть не пустую директорию со всем что внутри - delete not empty directory
+
+`rm -R  dir*` - remove all directories started "dir"
+
+`cp`     - копировать директорию - copy directory
+
+`cp -R dir2 dir4` - copy directory dir2 to dir4 with all files
+
+
+`DONT DO IT DANGER!!!`  `sudo rm –R  / --no-preserve-root`   - замочить систему Linux - kill system
+
+
+### Create Links
