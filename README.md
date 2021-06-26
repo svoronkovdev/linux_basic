@@ -419,3 +419,85 @@ Type:
 
 #### Access rights
 
+`-rw-rw-r--1 user user date user.txt`
+
+`drw-rw-r--1 user user date user.txt`
+
+1st `-` -mean file if `d` -mean directory if `l` -mean link
+
+2d `rwx` if no one `-`(rw-)
+
+3d `rwx`(rw-)
+
+4th `rwx`(r--)  - permissions to other who not user and not in group
+
+5th `1` -mean links to file(based on 1st parameter) if directory -mean quantity of files inside directory
+
+6th `user` - user to this user `2d` permissions
+
+7th `user` -group to this group `3d` permissions
+
+`rwx` - rights: `r`-read and visible for directory; `w` -write,delete,create; `x` - run for script and enter for directory
+
+`chown` – изменить владельца файла / директории -change owner file / directory
+
+`sudo chown joe user.txt` – change owner file(user.txt) to joe
+
+`chgrp`– изменить группу файла / директории - change group file /directory
+
+`sudo chgrp Programmers user.txt` - change group file (user.txt) to Programmers
+
+`сhmod` – изменить права доступа на файл / директорию - change rights for file or directory
+
+`sudo chmod  o+x  myfile.txt`   довавить X всем - add all(other user) right to execute(run) file myfile.txt
+
+`sudo chmod  ugo+x  myfile.txt`   довавить X всем - add all(other user) right to execute(run) file myfile.txt
+
+`sudo сhmod  g-rw   myfile.txt`   убрать RW у группы - delete permission to read and write for group myfile.txt
+
+`sudo chmod  o=rw   myfile.txt` -  установить RW всем остальным -add all(other user) right to read and write file myfile.txt
+
+ `u`= user;  `g` = group;  `o` = other; `a`= ugo -all
+
+`sudo chmod  777   myfile.txt` -  установить RWX всем - add for all rights rwx for file myfile.txt
+
+`sudo chmod  741   myfile.txt` - установить:   RWX   владельцу, R - -    группе,  - - X   всем остальным - owner all rights, read for group, execute for others
+
+```
+777 
+rwx=7=4+2+1
+r = 4
+w = 2
+x = 1
+rw- =6=4+2+0
+r-x=5=4+0+1
+r--=4=4+0+0
+-wx=3=0+2+1
+-w-=2=0+2+0
+--x=1=0+0+1
+---=0=0+0+0
+```
+`sudo chmod  o+t myDir/`  -  включить StickyBit - turn on StickyBit mean others cannot remove files if they no have permission to file but have all permissions for directory
+
+`sudo chmod  o-t myDir/`  -  выключить StickyBit - turn off StickyBit mean others can remove files if they no have permission to file but have all permissions for directory
+
+`sudo chmod  1777 myDir`  -  включить StickyBit - turn on StickyBit `1` -mean add
+
+`sudo chmod 0777 myDir`   - выключить StickyBit - turn off StickyBit `0` -mean delete
+
+
+### Network
+
+`ifconfig `         - показать мой IP адресс
+
+`ip addr show`- показать мой IP адресс
+
+`route`      - показать адресс раутера Gateway
+
+`ping`        - протестировать коннекшен к адрессу
+
+`host`- дать IP адресс вэб сайта
+
+`dig `        - дать IP адресс вэб сайта
+
+`netstat`– выдать сетевые подключения компьютера
