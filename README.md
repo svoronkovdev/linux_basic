@@ -196,4 +196,87 @@
 
 ### Commands 
 
+`find` - найти файл - find file
+
+`find /home -name "*.txt"` - find all files .txt in home directory
+
+`find /home -name "file*.txt"` - find all files name starts from file .txt in home directory
+
+`wc`  - вывести количество строк, слов, байт - count quantity of strings(lines), words, bytes
+
+`wc linux.txt` - show quantity in file linux.txt
+
+`wc -l linux.txt` - show quantity only strings in file linux.txt
+
+`wc -w linux.txt` - show quantity words in file linux.txt
+
+`cut` – вывести определенное поле из текста - show field by delimeter
+
+`cut -d ">" -f 3 filedata.txt` - show fild by delimeter ">" 3d column from file filedata.txt
+
+`cut -d ">" -f 3 filedata.txt | sort` - show fild by delimeter ">" 3d column from file filedata.txt then sort them
+
+`sort` – вывести отсортированный текст - show sorted file do not change file
+
+`sort numbers.txt` - show sorted numbers.txt(by char)
+
+`sort -n numbers.txt` - show sorted numbers.txt(by numbers)
+
+#### Grep
+
+`grep`  - поиск определонного слова в файле и вывод строк с этим словом -find words in file and show strings with it
+
+`grep error ./*` - find error in current directory in all files
+
+`grep -i error ./*` - find error in current directory in all files ignore case sensitive
+
+`grep -i error ./* | less` - find error in current directory in all files ignore case sensitive in editor
+
+`grep .com logs.txt` - find ".com" in file logs.txt
+
+`grep -E "[A-Za-z]*@[A-Za-z]*.com" logs.txt` - find by regexp in file logs.txt
+
+`grep -E "(dev.gov|dev.com)" logs.txt` - find by regexp "dev.gov" or "dev.com" in file logs.txt
+
+
+##### Regular expression / Регулярные Выражения:
+
+`[A-Z]*`  - любое слово из больших букв - any word upper case
+
+`[a-z]*`  - любое слово из строчная букв - any word lower case
+
+`[0-9]*`   - сколько угодно подряд стоящих цифр - any numbers
+
+`\.` - "."
+
+`[A-Za-z]*@[A-Za-z]*.com`   – простое выражение емайлов с окончанием .com  - simple expression with ".com"
+
+`www\.[a-z]*\.com`  - любой вэб адресс  с окончанием .com - any web address with ".com"
+
+### Redirecting IO
+
+`sort names.txt > sorted_names.txt` - sort file names.txt and record to new file sorted_names.txt
+
+`sort -n numbers.txt > sorted_names.txt` - sort by number numbers.txt and rewrite(will be deleted info wich was in file) to sorted_names.txt 
+
+`sort names.txt >> sorted_names.txt` - sort names.txt and add to sorted_names.txt (not rewrite)
+
+`sort names.txt > names.txt` - firstly create file then sort(!!! will be empty )
+
+`sort -n numbers.txt >> numbers.txt` - sort by number numbers.txt and add sorted to numbers.txt
+
+`grep sv /etc/* 2> errors.txt` - find sv in directory /etc/ and subdirectories  if error write to file errors.txt (2> - mean redirect bad responses)
+
+`grep sv /etc/* 2> /dev/null` - find sv in directory /etc/ and subdirectories  if error write to no present device(2> - mean redirect bad responses)
+
+`/dev/null`   - устройство находящиеся - no present device
+
+`grep sv /etc/* > good.txt 2> errors.txt` - find sv in directory /etc/ and subdirectories good response write to good.txt if error write to file errors.txt (2> - mean redirect bad responses)
+
+`grep sv /etc/* > good.txt` - find sv in directory /etc/ and subdirectories good response write to good.txt
+
+`grep sv /etc/* &> results.txt` - find sv in directory /etc/ and subdirectories good and bad response write to results.txt
+
+`2>> errors.txt` - add errors to errors.txt
+
 
