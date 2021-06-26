@@ -64,6 +64,10 @@
 `locate` – показывает где файл - need to install
 
 `locate uptime` - show directory where file or test.txt
+
+`sudo reboot now` - reboot system
+
+`sudo shutdown now` - power off
   
 
 ### Work with directories
@@ -488,16 +492,57 @@ r--=4=4+0+0
 
 ### Network
 
-`ifconfig `         - показать мой IP адресс
+`ifconfig `     - показать мой IP адресс -show IP 
 
-`ip addr show`- показать мой IP адресс
+`ip addr show`- показать мой IP адресс - show IP
 
-`route`      - показать адресс раутера Gateway
+`route`      - показать адресс раутера Gateway - show adress gateway from wich you send packages to internet
 
-`ping`        - протестировать коннекшен к адрессу
+`ping`        - протестировать коннекшен к адрессу - test connection
 
-`host`- дать IP адресс вэб сайта
+`ping 8.8.8.8` - google dns 
 
-`dig `        - дать IP адресс вэб сайта
+`ping -c 4 8.8.8.8` - ping 4 times google dns then exit
 
-`netstat`– выдать сетевые подключения компьютера
+`traceroute www.google.com` - show 
+
+`host`- дать IP адресс вэб сайта - show ip by domen
+
+`host www.ebay.com`
+
+`dig `        - дать IP адресс вэб сайта - show ip by domen
+
+`netstat`– выдать сетевые подключения компьютера -show connection pc
+
+`sudo ufw allow 22` - open your port
+
+`sudo apt-get install openssh-server` - install server for connection from your server to others
+
+`ssh MyLinux` - connect to own linux(name pc)
+
+
+### Install programms
+
+`wget adress`    - скачать файл из интернета - download file from internet adress
+
+#### Ubuntu/Debian/Kali/Mint Linux:
+
+`sudo apt-get install name`     - скачать и установить программу -download and install programm name
+
+`sudo apt-get remove name`   - удалить программу - remove programm name
+
+`sudo dpkg –i name.deb`                - установить программу из файла .deb - install programm from file name.deb
+
+`sudo dpkg –r name`                - удалить программу -delete programm name
+
+`sudo name` - run programm name
+
+#### RedHat/CentOS/Amazon Linux:
+
+`sudo yum install name`          - скачать и установить программу -download and install programm name
+
+`sudo yum remove name`         - удалить программу - remove programm name
+
+`sudo rpm –i name.rpm`                  - установить программу из файла .rpm -install programm from file name.rpm
+
+`sudo rpm –e name`                 - удалить программу -delete programm name.rpm
