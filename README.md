@@ -171,7 +171,17 @@
 
 `mv .secret.txt ~/Desktop/` - move secret.txt to desktop directory
 
+#### Redacting files
 
+`vi` или `vim`  - самы старый и дурацкий редактор - oldest redactor `i` -to redact file `Esc` - out from redact. `:q`-exit, `:wq` -write and quit `:wq text.txt` -save to new file text.txt and quit
+
+`pico`  - новый редактов - the same as nano but less older
+
+`nano` – самый новый редактор - newest redactor `^`(ctrl)-for commands. `ctrl+o` -save `ctrl+x` -exit 
+
+`nano file.txt` - create and redact if not exist, else if present redact file
+
+`gedit` – как и Notepad в Windows, работает только  если есть графический интерфейс - only with graphic interface
 
 ### Create Links
 
@@ -279,4 +289,133 @@
 
 `2>> errors.txt` - add errors to errors.txt
 
+
+### Zip
+
+`tar cf  mytar.tar  Folder1`   - заархивировать Folder1 - create tar from folder Folder1(f always last)
+
+`tar cvf mytar.tar Folder1` - create tar from Folder1 (v - verbbose - show what do)
+
+`tar xf mytar.tar`  - разархивировать архив - unzip mytar.tar
+
+`tar xvf mytar.tar`  - разархивировать архив - unzip mytar.tar and show what do
+
+`tar tf mytar.tar` - show what contains mytar.tar
+
+`tar cvzf myBZIP2.bz2  Folder1`    – сжать Folder1 - compress folder
+
+`tar xvf  myBZIP2.bz2`   - распаковать архив - uncompress folder
+
+`tar tf myBZIP2.bz2`    - посмотреть что внутри архива - show what inside 
+
+`tar cvzf myGzip.gz Folder1` - create myGzip.gz from Folder1 and show what do
+
+`tar cjf myBzip.bz2 Folder1` - create myBzip.bz2 from Folder1
+
+`tar cJf myXz.xz Folder1` - create m myXz.xz from Folder1
+
+`gzip     / bzip2     / xz`      – скомпрессировать файл -compress file
+
+`gunzip /  bunzip2 / unxz`  – раскомпресировать файл - uncompress file
+
+`gzip mytar.tar` - compress mytar.tar
+
+`gunzip mytar.tar.gz` - decompress mytar.tar
+
+`bzip2 mytar.tar` - compress mytar.tar compress more than gzip
+
+`bunzip2 mytar.tar.bz2` - decompress mytar.tar
+
+`xz mytar.tar` - compress mytar.tar also compress more than gzip but less than bzip2
+
+`unxz mytar.tar.xz` - decompress mytar.tar
+
+`zip –r myZIP.zip Folder1`- Запаковать Folder1 в ZIP - zip Folder1 to zip to compatible with windows
+
+`unzip myZIP.zip`         - Распаковать файл myZIP.zip - unzip file myZIP.zip
+
+
+### Memory and Processes
+
+`top` – как Task Manager в Windows - taskmanager Linux then (`shift+p`-show max by processor)(`shift+m` - show max by memory) to exit `q`
+
+`free`  - показать состояние памяти в байтах - state memory bytes
+
+`free –h`  - показать состояние памяти в MB, GB - state memory MB, GB
+
+`ps`          -  показать мои процессы - show current user processes
+
+`ps -u name` -show processes for user "name"
+
+`ps aux`  - показать все процессы от всех пользователей - show processes all users
+
+`ps aux | grep bash`  - найти все процессы bash от всех пользователей - show all processes for all users where bash
+
+
+#### Logs
+
+`cd /var` - root directory with logs
+
+`cd log` - log directory
+
+`dmesg` - log Linux kernel
+
+
+### Accounts
+
+Type:
+
+-root
+
+-administrator(can use sudo)
+
+-standart(cannot use sudo)
+
+`/home` - directory with user's  folders
+
+`sudo`  - запустить комманду используя Super User права - run comands from super user
+
+`su`- сменить текушего пользователя - change current user
+
+`su petya` - change user to petya
+
+`/etc/passwd`    - тут хранятся все аккаунты - here saved all accounts
+
+`/etc/shadow`   - тут хранятся все пароли аккаунтов - here all passwords for accounts
+
+`/etc/group`    - тут хранятся все группы - here all groups
+
+`whoami`  - показать имя текущего пользователя - show name current user
+
+`id`   - показать к каким группам принадлежит пользователь - show groups for user. For other user `id name` - show groups for name(user)
+
+`who` – показать кто сейчас в системе - show users in system
+
+`w`   - показать кто сейчас в системе и что делает - show who in system and what doing
+
+`last` – показать последние логины - show lst logins
+
+#### Work with users
+
+`sudo useradd  -m vasya`   - создать юзера vasya с домашней  директорией - add user vasya
+
+`sudo userdel –r vasya`     - стереть юзера vasya с его домашней  директорией - delete user vasya
+
+`/etc/skel`    -  это шаблон домашней директории -template for home directory. When we create new user files from here copy to user directory
+
+`sudo passwd vasya`   - изменить пароль для юзера vasya - change password for vasya
+
+
+#### Work with groups
+
+`sudo groupadd Programmers`  - создать группу Programmers - create group Programmers
+
+`sudo groupdel Programmers`  - стереть группу Programmers - delete group Programmers
+
+`sudo usermod –aG Programmers vasya`  - добавить юзера vasya в группу Programmers -add user vasya to group Programmers
+
+`sudo deluser vasya Programmers`  - удалить юзера vasya  из групы Programmers - remove user vasya from group Programmers
+
+
+#### Access rights
 
