@@ -107,6 +107,8 @@
 
 ### Work with directories
 
+[Content](#content)
+
 `/` - root directory - коренная директория Linux
 
 `/home` - directory where users
@@ -176,6 +178,8 @@
 
 ### Work with files
 
+[Content](#content)
+
 `cat` - show file
 
 `cat text.txt` - show file use `Tab` when in directory to autofilling for example `cat t`+Tab == `cat text.txt`
@@ -224,6 +228,8 @@
 
 ### Create Links
 
+[Content](#content)
+
 `ln`   - создать дубликат файла 
 
 `ln –s `  - создать symbolic линк на файл или директорию типа Shortcut
@@ -244,6 +250,8 @@
 
 
 ### Commands 
+
+[Content](#content)
 
 `find` - найти файл - find file
 
@@ -304,6 +312,8 @@
 
 ### Redirecting IO
 
+[Content](#content)
+
 `sort names.txt > sorted_names.txt` - sort file names.txt and record to new file sorted_names.txt
 
 `sort -n numbers.txt > sorted_names.txt` - sort by number numbers.txt and rewrite(will be deleted info wich was in file) to sorted_names.txt 
@@ -330,6 +340,8 @@
 
 
 ### Zip
+
+[Content](#content)
 
 `tar cf  mytar.tar  Folder1`   - заархивировать Folder1 - create tar from folder Folder1(f always last)
 
@@ -376,6 +388,8 @@
 
 ### Memory and Processes
 
+[Content](#content)
+
 `top` – как Task Manager в Windows - taskmanager Linux then (`shift+p`-show max by processor)(`shift+m` - show max by memory) to exit `q`
 
 `free`  - показать состояние памяти в байтах - state memory bytes
@@ -398,6 +412,8 @@
 
 #### Logs
 
+[Content](#content)
+
 `cd /var` - root directory with logs
 
 `cd log` - log directory
@@ -406,6 +422,8 @@
 
 
 ### Accounts
+
+[Content](#content)
 
 Type:
 
@@ -532,6 +550,8 @@ r--=4=4+0+0
 
 ### Network
 
+[Content](#content)
+
 `ifconfig `     - показать мой IP адресс -show IP 
 
 `ip addr show`- показать мой IP адресс - show IP
@@ -632,6 +652,8 @@ dns-namesrvers 8.8.8.8
 
 ### Install programms
 
+[Content](#content)
+
 `wget adress`    - скачать файл из интернета - download file from internet adress
 
 #### Ubuntu/Debian/Kali/Mint Linux:
@@ -658,6 +680,8 @@ dns-namesrvers 8.8.8.8
 
 
 ### Bash
+
+[Content](#content)
 
 
 `myscript.sh` - name script always end .sh
@@ -833,6 +857,8 @@ echo "sum is $sum"
 
 ### HDD
 
+[Content](#content)
+
 `sudo fdisk -l` - show disks
 
 `/dev/sda`    - первый SATA диск - first disk
@@ -862,6 +888,8 @@ then redact file
 
 
 ### Schedule
+
+[Content](#content)
 
 `crontab - l`    - показать расписание -show schedule
 
@@ -894,3 +922,5 @@ min   hour  day  month   day of week
 `sudo nano /etc/crontab`  - edit file with schedule system
 
 `sudo cat /var/log/syslog | grep CRON` - syslog filter CRON
+
+[Content](#content)
