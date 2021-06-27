@@ -355,6 +355,11 @@
 
 `ps aux | grep bash`  - найти все процессы bash от всех пользователей - show all processes for all users where bash
 
+`ps aux | grep -i “name of your desired program”`
+
+`sudo kill -9 $(sudo lsof -t -i:8000)` - kill process on 8000 port
+
+`sudo kill -9 process_id`
 
 #### Logs
 
@@ -520,6 +525,75 @@ r--=4=4+0+0
 
 `ssh MyLinux` - connect to own linux(name pc)
 
+`sudo lsof -i -P -n | grep LISTEN` - check ports
+
+`sudo lsof -t -i:8000` - check 8000 port
+
+`telnet localhost 4222` - check
+
+#### Change IP
+
+`hostname`    - вывести название компа -current name PC
+
+`sudo hostname MyLinux` - переименовать в MyLinux -rename PC to MyLinux
+
+`/etc/hostname`  - тут прописано название компа - here file `sudo nano /etc/hostname`
+
+`/etc/hosts`   - тут прописываем новое название напротив IP адресса - here change name `sudo nano /etc/hosts`
+
+`ifconfig`   - вывести текущий IP адресс - show current IP
+
+Временно меняем IP адресс так: / temporary change IP
+`sudo  ifconfig  enp0s3  10.10.10.10  netmask  255.0.0.0`
+
+`/etc/network/interfaces`  - тут прописываем постоянный IP - here write static IP 
+
+`sudo nano /etc/network/interfaces` and add enp0s3(name network card from command `ifconfig`)
+
+```
+auto enp0s3
+iface enpp0s3 inet static
+address 20.20.20.20
+netmask 255.0.0.0
+gateway 20.20.20.1
+dns-namesrvers 8.8.8.8
+```
+
+`sudo ifdown enp0s3`    - отключить сетевуху eth0 - turn off network card
+
+`sudo ifup   enp0s3`      - включить сетевуху eth0 - turn on network card
+
+#### Connect to remote Linux
+
+`ifconfig` - get inet 192.168.10.130
+
+`ping 192.168.10.130` -check connection
+
+`service ssh status`   - статус SSH сервиса -ssh status
+
+`service ssh start`- запустить SSH сервис - run ssh
+
+`sudo apt-get install openssh-server`   - установить SSH - install ssh
+
+`ssh vasya@192.168.10.130`   - подключится к компу (192.168.10.130) как пользователь (vasya) if user don't have need to create or use known(by default when connect it use your current user)
+
+#### From windows
+
+##### Putty
+
+1) download `putty`
+
+2)enter Ip remote port 22
+
+3) connect
+
+##### mobaXterm
+
+1) download
+
+2) session ssh enter ip port and user
+
+3)connect(you can save password)  and you can split
 
 ### Install programms
 
@@ -720,3 +794,68 @@ echo "sum is $sum"
 
 ```
 `bash ./my43.sh` - run script
+
+
+### HDD
+
+`sudo fdisk -l` - show disks
+
+`/dev/sda`    - первый SATA диск - first disk
+
+`/dev/sdb`    - второй SATA диск -second disk
+
+`/dev/sdc`    - третий SATA диск -third disk
+
+`fdisk –l`    -  показать какие есть диски show disks
+
+`lsblk`        -  показать какие есть диски - show tree disk
+
+`sudo cfdisk   /dev/sdb`  - редактировать разделы sdb диска - change disk's partitions 
+
+`mkfs.ntfs  –f  /dev/sdb1`   - форматировать  раздел первый второго диска - format disk
+
+`/etc/fstab`   - тут прописываем новые диски чтобы они присоединялись автоматически при загрузки Линукса - add to table for visible
+
+```
+create dir hdd2 /media/hdd2(by default own new disk add to /media/user)
+then redact file
+/etc/fstab:
+/dev/sdb1 //media/hdd2 ntfs default 0 0
+```
+
+`sudo mount /media/hdd2`   - присоединяет диск прописанный в файле fstab с именем hdd2 без перезагрузки Линукса - connect second disk
+
+
+### Schedule
+
+`crontab - l`    - показать расписание -show schedule
+
+`crontab -e`   - редактировать расписание - redact schedule
+
+```
+*     *     *    *       *
+min   hour  day  month   day of week
+
+0-59  0-23  1-31  1-12   0-6(0=sunday)
+
+* -every minute
+*/2 -every 2 minutes
+*/3 - every 3 minute
+
+6,18 -on 6 and 18 minute
+```
+
+```
+* * * * 5 echo "Hello!" >> /home/user/scripts/mylog.log # every friday every minute write to mylog.log "Hello!"
+50 12 * * *  echo "Hi!" >> /home/user/scripts/mylog.log # every day 12:50 write to mylog.log "Hi!"
+
+*/2 * * * * /home/user/scripts/mylog.sh # every 2 minute run script
+```
+
+`sudo cat /var/spool/cron//crontabs/user` - path to file(each user have its file)
+
+`/etc/crontab`  - файл расписания на системном уровне -file with schedule system
+
+`sudo nano /etc/crontab`  - edit file with schedule system
+
+`sudo cat /var/log/syslog | grep CRON` - syslog filter CRON
