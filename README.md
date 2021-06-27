@@ -5,6 +5,35 @@
 ## Content
 
  [About System](#about-system)
+ 
+ [Work with directories](#work-with-directories)
+ 
+ [Work with files](#work-with-files)
+  
+ [Work with links](#create-links)
+ 
+ [Commands](#commands)
+  
+ [Redirecting IO](#redirecting-io)
+
+ [Zip](#zip)
+
+ [Memory and Processes](#memory-and-processes)
+ 
+ [Logs](#logs)
+ 
+ [Accounts](#accounts)
+  
+ [Network](#network)
+   
+ [Install programms](#install-programms)
+    
+ [Bash](#bash)
+ 
+ [HDD](#hdd)
+ 
+ [Schedule](#schedule)
+   
 
 ### About System
 
