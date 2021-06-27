@@ -546,3 +546,177 @@ r--=4=4+0+0
 `sudo rpm –i name.rpm`                  - установить программу из файла .rpm -install programm from file name.rpm
 
 `sudo rpm –e name`                 - удалить программу -delete programm name.rpm
+
+
+### Bash
+
+
+`myscript.sh` - name script always end .sh
+
+##### myscript.sh
+
+```
+#!/bin/bash        # comment: always start script
+
+echo "Hello script"  # we can use commands
+echo "Let`s show files in this folder"
+ls
+xterm &             # run terminal, & - mean don't want
+ls -l 
+<<COMMENT
+    This is a multiple line comment
+    In Bash Scripting, print Done
+COMMENT
+echo "Done"
+
+```
+
+##### run script
+
+`bash myscript.sh` - run script using bash
+
+To run without `bash` we need in rights add `x`
+
+`sudo chmod a+x myscript.sh` - add rights to run script
+
+`./myscript.sh` - run script
+
+##### my2.sh
+
+```
+#!/bin/bash       
+
+myPC="sv"  # variable (!don't use whitespaces)
+myOS=`uname –u` # record to variable name system
+echo "Name of script is $0"
+
+echo "Hello $1" # myPC
+echo "Hello $2" #myOS
+
+num1=10
+num2=20
+sum=$((num1+num2))
+echo "$num1 + $num2 = $sum"
+myhost=`hostname` #`` -for system variables
+mygtw="8.8.8.8"
+
+ping -c 4 $myhost
+ping -c 4 $mygtw
+
+echo -n "is done..." # -n -means no new line
+echo "all done"
+```
+
+`./my2.sh  Vasya  Petya  Kolya`
+
+`$0` -  при этом равен  ./myscript.sh  -always name script
+
+`$1` - при этом равен Vasya - first argument
+
+`$2` -при этом равен Petya - second argument
+
+`$3`- при этом равен Kolya - third argument
+
+myOS=`uname –u`   - запускает uname –u и сохраняет  результат в переменную myOS - save I argument
+```
+# Сохранить ввод пользователя в переменную name:
+# Save Input to variable name
+read –p “Please enter your name: “ name
+```
+
+##### my3.sh if and switch
+
+```
+#!/bin/bash       
+# start
+if["$1"=="Vasya"]; then
+echo "Hi $1"
+elif["$1"=="Joe"]; then
+echo "Hello $1" 
+else
+echo "Welcome $1"
+fi 
+# end
+# start switch
+x=$2
+echo "Start CASE"
+case $x in
+  1) echo "One";;
+[2-9]) echo "two to nine";;
+"Petya") echo "Hello $x";;
+*) echo "Unknown parameter" # other case
+esac
+#end switch
+
+```
+`bash ./my3.sh Vasya 3333` - run script
+
+##### my4.sh while and for
+
+```
+#!/bin/bash       
+# start
+COUNTER=0 # variable
+while [$COUNTER -lt 10]; do
+echo "Current counter is $COUNTER"
+COUNTER=$(($COUNTER+1))
+done
+# end
+<<COMMENT
+Other variants
+    let COUNTER=COUNTER+1
+    let COUNTER+=1
+COMMENT
+
+# start
+# this loop read all files "*.txt" and show to console
+for myfile in `ls *.txt`; do
+cat $myfile
+done
+$ end
+
+# start
+
+for ((i=1; i<=10; i++)); do
+echo "number i = $i"
+done
+# end
+
+# start
+
+for x in {1..10}; do
+echo "x = $x"
+done
+# end
+
+```
+`bash ./my43.sh` - run script
+
+##### my5.sh  function
+
+```
+#!/bin/bash       
+sum=0
+
+myFunc()
+{
+echo "text from func"
+echo "first param is $1"
+echo "second parameter is $2"
+}
+
+myFunc1()
+{
+echo "text from func"
+echo "first param is $1"
+echo "second parameter is $2"
+sum=$(($1+$2))
+}
+# start
+myFunc
+myFunc1 50 10
+echo "sum is $sum"
+# end
+
+```
+`bash ./my43.sh` - run script
