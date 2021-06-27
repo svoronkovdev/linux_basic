@@ -4,7 +4,7 @@
 
 ## Content
 
-About System [About](###About System)
+About System [About](###about system)
 
 ### About System
 
