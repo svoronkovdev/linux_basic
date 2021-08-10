@@ -975,7 +975,7 @@ $ sudo update-alternatives --config java
 The response will look like:
 
 There are 4 choices for the alternative java (providing /usr/bin/java).
-
+```
   Selection    Path                                            Priority   Status
 ------------------------------------------------------------
 * 0            /usr/lib/jvm/java-14-openjdk-amd64/bin/java      1411      auto mode
@@ -986,13 +986,13 @@ There are 4 choices for the alternative java (providing /usr/bin/java).
 
 Press <enter> to keep the current choice[*], or type selection number: 
 Now you can switch to another JRE or keep the current version.
-
+```
 2. Switch JDK version
 Check installed JDKs:
 
-$ sudo update-alternatives --config javac 
+$ `sudo update-alternatives --config javac `
 The response will look like:
-
+```
 There are 4 choices for the alternative javac (providing /usr/bin/javac).
 
   Selection    Path                                          Priority   Status
@@ -1005,13 +1005,13 @@ There are 4 choices for the alternative javac (providing /usr/bin/javac).
 
 Press <enter> to keep the current choice[*], or type selection number: 
 Again, you can now switch to another JDK or keep the current version.
-
+```
 Step 3. Add JAVA_HOME environment variable
 Java applications may use environment variables. JAVA_HOME is a common one so we will now we add this.
 
 Edit /etc/environment file:
 
-$ sudo nano /etc/environment
+$ `sudo nano /etc/environment`
 Add the following line to the file and save:
 
 JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/bin/"
@@ -1019,10 +1019,10 @@ In the above example we are using Java 11.
 
 To apply the changes you will need to log out then log in again. To apply the changes in your current terminal session use the source command:
 
-$ source /etc/environment
+$` source /etc/environment`
 Check the environment variable was set:
 
-$ echo $JAVA_HOME
+$ `echo $JAVA_HOME`
 The response should look like:
 
 sr/lib/jvm/java-11-openjdk-amd64/bin/
